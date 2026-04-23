@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "s100calc"
+version = "0.1.0"
+description = "AISI S100 cold-formed steel member design checks"
+requires-python = ">=3.12"
+dependencies = [
+    "efficalc>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "openpyxl>=3.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["s100calc*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
